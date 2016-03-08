@@ -7,7 +7,7 @@ import { DashboardComponent } from 'app/dashboard.component/dashboard.component'
 
 @Component({
     selector: 'my-app',
-    styleUrls: ['app/app.component.css'],
+    styleUrls: ['app/app.component/app.component.css'],
     template: `
       <h1>{{title}}</h1>
       <nav>
