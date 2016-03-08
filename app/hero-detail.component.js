@@ -42,7 +42,7 @@ System.register(['angular2/core', 'angular2/router', './hero.service'], function
                     core_1.Component({
                         selector: 'my-hero-detail',
                         templateUrl: './app/hero-detail.component.html',
-                        styleUrls: ['hero-detail.component.css'],
+                        styleUrls: ['./app/hero-detail.component.css'],
                         inputs: ['hero']
                     }), 
                     __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.RouteParams])
