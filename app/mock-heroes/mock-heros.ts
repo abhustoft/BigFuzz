@@ -1,5 +1,5 @@
-import {Hero} from './../hero/hero';
-export var HEROES: Hero[] = [
+import {Bottle} from './../bottle/bottle';
+export var BOTTLES: Bottle[] = [
     {"id": 11, "name": "Mr. Nice"},
     {"id": 12, "name": "Narco"},
     {"id": 13, "name": "Bombasto"},

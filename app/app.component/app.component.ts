@@ -1,8 +1,8 @@
 import { Component }       from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
-import { HeroService }     from 'app/hero.service/hero.service';
-import { HeroesComponent } from 'app/heroes.component/heroes.component';
-import { HeroDetailComponent } from 'app/hero-detail.component/hero-detail.component';
+import { BottleService }     from '../bottle.service/bottle.service';
+import { BottlesComponent } from '../bottles.component/bottles.component';
+import { BottleDetailComponent } from '../bottle-detail.component/bottle-detail.component';
 import { DashboardComponent } from 'app/dashboard.component/dashboard.component';
 
 @Component({
@@ -19,7 +19,7 @@ import { DashboardComponent } from 'app/dashboard.component/dashboard.component'
     directives: [ROUTER_DIRECTIVES],
     providers: [
         ROUTER_PROVIDERS,
-        HeroService
+        BottleService
     ]
 })
 
@@ -27,7 +27,7 @@ import { DashboardComponent } from 'app/dashboard.component/dashboard.component'
     {
         path: '/detail/:id',
         name: 'HeroDetail',
-        component: HeroDetailComponent
+        component: BottleDetailComponent
     },
     {
         path: '/dashboard',
@@ -36,9 +36,9 @@ import { DashboardComponent } from 'app/dashboard.component/dashboard.component'
         useAsDefault: true
     },
     {
-        path: '/heroes',
+        path: '/bottles',
         name: 'Heroes',
-        component: HeroesComponent
+        component: BottlesComponent
     }
 ])
 

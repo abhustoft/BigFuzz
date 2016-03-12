@@ -1,0 +1,15 @@
+<h1>{{title}}</h1>
+<h2>My Bottles</h2>
+<ul class="bottles">
+    <li *ngFor="#bottle of bottles"
+        [class.selected]="bottle === selectedBottle"
+        (click)="onSelect(bottle)">
+        <span class="badge">{{bottle.id}}</span> {{bottle.name}}
+    </li>
+</ul>
+<div *ngIf="selectedBottle">
+    <h2>
+        {{selectedBottle.name | uppercase}} is my bottle
+    </h2>
+    <button (click)="gotoDetail()">View Details</button>
+</div>
