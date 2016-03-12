@@ -13,19 +13,19 @@ import { BottleService } from '../bottle.service/bottle.service';
 })
 
 export class DashboardComponent implements OnInit {
-    heroes: Bottle[] = [];
+    bottles: Bottle[] = [];
 
     constructor(
         private _router: Router,
-        private _heroService: BottleService) {
+        private _bottleService: BottleService) {
     }
 
     ngOnInit() {
-        this._heroService.getBottles()
-            .then(heroes => this.heroes = heroes.slice(1,5));
+        this._bottleService.getBottles()
+            .then(bottles => this.bottles = bottles.slice(1,5));
     }
-    gotoDetail(hero: Bottle) {
-        let link = ['HeroDetail', { id: hero.id }];
+    gotoDetail(bottle: Bottle) {
+        let link = ['BottleDetail', { id: bottle.id }];
         this._router.navigate(link);
     }
 

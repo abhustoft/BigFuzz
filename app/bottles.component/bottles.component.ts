@@ -28,7 +28,7 @@ export class BottlesComponent implements OnInit {
     onSelect(bottle: Bottle) { this.selectedBottle = bottle; }
 
     gotoDetail() {
-        this._router.navigate(['HeroDetail', { id: this.selectedBottle.id }]);
+        this._router.navigate(['BottleDetail', { id: this.selectedBottle.id }]);
     }
 }
 

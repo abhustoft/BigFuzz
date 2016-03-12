@@ -1,5 +1,5 @@
 import {Bottle} from './../bottle/bottle';
-import {BOTTLES} from './../mock-heroes/mock-heros';
+import {BOTTLES} from './../mock-bottles/mock-bottles';
 import {Injectable} from 'angular2/core';
 
 @Injectable()
@@ -15,7 +15,7 @@ export class BottleService {
     }
     getBottle(id: number) {
         return Promise.resolve(BOTTLES).then(
-            heroes => heroes.filter(hero => hero.id === id)[0]
+            bottle => bottle.filter(bottle => bottle.id === id)[0]
         );
     }
 

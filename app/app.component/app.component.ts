@@ -12,7 +12,7 @@ import { DashboardComponent } from 'app/dashboard.component/dashboard.component'
       <h1>{{title}}</h1>
       <nav>
         <a [routerLink]="['Dashboard']">Dashboard</a>
-        <a [routerLink]="['Heroes']">Heroes</a>
+        <a [routerLink]="['Bottles']">Bottles</a>
       </nav>
       <router-outlet></router-outlet>
     `,
@@ -26,7 +26,7 @@ import { DashboardComponent } from 'app/dashboard.component/dashboard.component'
 @RouteConfig([
     {
         path: '/detail/:id',
-        name: 'HeroDetail',
+        name: 'BottleDetail',
         component: BottleDetailComponent
     },
     {
@@ -37,12 +37,12 @@ import { DashboardComponent } from 'app/dashboard.component/dashboard.component'
     },
     {
         path: '/bottles',
-        name: 'Heroes',
+        name: 'Bottles',
         component: BottlesComponent
     }
 ])
 
 
 export class AppComponent {
-    title = 'Tour of Heroes';
+    title = 'Tour of Bottles';
 }

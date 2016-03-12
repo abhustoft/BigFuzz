@@ -4,21 +4,21 @@ import { RouteParams } from 'angular2/router';
 import { BottleService } from './../bottle.service/bottle.service';
 import {Bottle} from './../bottle/bottle';
 @Component({
-    selector: 'my-hero-detail',
+    selector: 'my-bottle-detail',
     templateUrl: 'app/bottle-detail.component/bottle-detail.component.html',
     styleUrls: ['app/bottle-detail.component/bottle-detail.component.css'],
-    inputs: ['hero']
+    inputs: ['bottle']
 })
 export class BottleDetailComponent {
-    hero: Bottle;
+    bottle: Bottle;
     constructor(
-        private _heroService: BottleService,
+        private _bottleService: BottleService,
         private _routeParams: RouteParams) {
     }
     ngOnInit() {
         let id = +this._routeParams.get('id');
-        this._heroService.getBottle(id)
-            .then(hero => this.hero = hero);
+        this._bottleService.getBottle(id)
+            .then(bottle => this.bottle = bottle);
     }
     goBack() {
         window.history.back();
