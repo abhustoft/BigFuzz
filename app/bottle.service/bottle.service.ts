@@ -1,7 +1,8 @@
+import {Injectable}     from 'angular2/core';
+import {Http, Response} from 'angular2/http';
+import {Observable}     from 'rxjs/Observable';
 import {Bottle} from './../bottle/bottle';
 import {BOTTLES} from './../mock-bottles/mock-bottles';
-import {Injectable} from 'angular2/core';
-import {Http, Headers} from 'angular2/http';
 
 //Check:
 // https://auth0.com/blog/2015/10/15/angular-2-series-part-3-using-http/
@@ -9,21 +10,25 @@ import {Http, Headers} from 'angular2/http';
 @Injectable()
 export class BottleService {
 
-    getVP() {
-        //fetchUrl('http://104.236.28.133:8080/prices/list')
-        //    .then(function(response) {
-        //        return response.json()
-        //    }).then(function(json) {
-        //    console.log('parsed json', json)
-        //}).catch(function(ex) {
-        //    console.log('parsing failed', ex)
-        //})
+    constructor (private http: Http) {}
 
+    private _bottlesUrl = 'http://104.236.28.133:8080/prices/list';
+
+    getVP () {
+        return this.http.get(this._bottlesUrl)
+            .map(res => res.json().data)
+            .catch(this.handleError);
     }
 
+    private handleError (error: Response) {
+        // in a real world app, we may send the error to some remote logging infrastructure
+        // instead of just logging it to the console
+        console.error(error);
+        return Observable.throw(error.json().error || 'Server error');
+    }
 
     getBottles() {
-        this.getVP();
+        const somebottles = this.getVP();
         return Promise.resolve(BOTTLES);
     }
     // See the "Take it slow" appendix
