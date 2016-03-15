@@ -12,7 +12,7 @@ export class BottleService {
 
     constructor (private http: Http) {}
 
-    private _bottlesUrl = 'http://104.236.28.133:8080/prices/list';
+    private _bottlesUrl = 'http://104.236.28.133:8080/prices/reductions';
 
     getVP () {
         return this.http.get(this._bottlesUrl)
@@ -28,7 +28,10 @@ export class BottleService {
     }
 
     getBottles() {
-        const somebottles = this.getVP();
+        const somebottles = this.getVP()
+            .subscribe(
+                bottles => console.log(bottles),
+                error =>  console.log(error));
         return Promise.resolve(BOTTLES);
     }
     // See the "Take it slow" appendix
